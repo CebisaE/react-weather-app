@@ -33,7 +33,7 @@ export default function Weather(props) {
 
   function search() {
     let apiKey = "894a2e7aa7f46eeca5d8778f6faa5a5b";
-    let apiUrl =  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    let apiUrl =  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
   }
@@ -68,7 +68,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast coordinates={weatherData.coordinates} city={weatherData.city}/>
+        {/* <WeatherForecast coordinates={weatherData.coordinates} city={weatherData.city}/> */}
         <footer>
           This project was coded by {""}
           <a
